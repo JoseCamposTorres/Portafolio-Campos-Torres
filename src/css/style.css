@@ -199,7 +199,14 @@ body{
 }
 
 .footer{
+
     background-color:#293e52;
     text-align: center;
     justify-content: center;
+}
+.footer a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    
 }
