@@ -1,16 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Oswald&family=Titillium+Web:wght@700&display=swap');
 
+*{
+    padding: 0;
+    margin: 0;
+}
 html{
         scroll-behavior: smooth;
-    
 }
 
 body{
     background-color: #34495E;
     color: white;
     font-family: 'Titillium Web', sans-serif;
-
 }
 
 .photo-principal{
@@ -31,7 +33,6 @@ body{
 
 
 .header .logo {
-
     cursor: pointer;
     height: 70px;
     width: auto;
@@ -66,55 +67,95 @@ body{
     color: white;   
 }
 
+.titulo {
+    display: flexbox;  
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
 .content{
     display: inline-block;
-    padding-top: 40px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-top: 20px;
     text-align: center;
 }
 
 .describe {
-    padding-right: 200px;
-    padding-left: 200px;
+    margin-top: 30px;
+    margin-inline: 200px;
+    margin-bottom: 50px;
 }
 
 .Skills{
-    display: flexbox;
-    padding-top: 20px;
-    background-color: #000;
-    height: 450px;
+
+    height: 1500px;
+    
 }
 
-.Skills h1{
+.subtitulo{
+    margin-top: 30px;
+    font-size: 21px;
     text-align: center;
+}
 
+.containerSkills{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.cajita{
+    margin-top: 60px;
+    width: 700px;
+    height: 1250px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    justify-items: center;
+}
+
+.cajita > div {
+    height: 180px;
+    width: 180px;
+    background-color: #000;
+    opacity: 0.5;
+    box-shadow: 0px 1px 19px #000;
+}
+
+.cajitas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.cajitas >img{
+    width: 90px;
+    height: 90px;
+
+}
+
+.cajitas:hover{
+    transform: scale(1.1);
 }
 
 .contenedorProyecto{
-    
+    display: flexbox;
     align-items: center;
     justify-content: center;
     height: 100vh;
     transition: width 2s;
 }
 
-.tituloProyecto{
-    display: flex;  
-    text-align: center;
-    justify-content: center;
-    margin-bottom: -60px;
-    margin-top: 60px;
-}
-
 .contenedorProyecto .containerP{
     margin-top: 70px;
-    display: inline-flex;
+    display: flex;
     text-align: center;
     padding-left: 120px;
     padding-right: 120px;
-    width: 83vw; 
-    
+    width: 83vw;     
 } 
 
 .panel{
@@ -131,6 +172,10 @@ body{
     transition: all 592ms ease-in;
     scale: 1;
     box-shadow: 0px 1px 19px #000;
+    overflow: hidden;
+}
+.panel:hover{
+    transform: scale(0.95);
 }
 
 .panel h1{
@@ -159,6 +204,7 @@ body{
     box-shadow:0px 1px 20px #000;
     opacity: 1;
     transition: opacity 0.2s ease-in 0.4s;
+    overflow: hidden;
 }
 
 .panel h6{
@@ -168,6 +214,7 @@ body{
     left: 20px;                                                                                                                                                                                                                                                    
     margin: 0;
     opacity: 0;
+    overflow: hidden;
 }
 
 .logosTec{
@@ -184,22 +231,7 @@ body{
     opacity: 1;
 }
 
-@media (max-width: 480px){
-    .container{
-
-        width: 100vw;
-        transition: opacity 0.3s ease-in 0.4s;
-    }
-
-    .panel:nth-of-type(4),
-    .panel:nth-of-type(5){
-
-        display: none;
-    }
-}
-
 .footer{
-
     background-color:#293e52;
     text-align: center;
     justify-content: center;
@@ -207,6 +239,18 @@ body{
 .footer a{
     list-style: none;
     text-decoration: none;
-    color: white;
-    
+    color: white;   
 }
+
+@media (max-width: 412px){
+    .containerP{
+        width: 100vh;
+        transition: opacity 0.3s ease-in 0.4s;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}
+
