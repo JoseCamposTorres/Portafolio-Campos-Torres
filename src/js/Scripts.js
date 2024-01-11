@@ -13,5 +13,18 @@ function removeActiveClasses(){
     })
 }
 
+document.getElementById('logo').addEventListener('click', function() {
+    var MediaQuery = window.matchMedia('(max-width:600px)');
+    if(MediaQuery.matches){
+        var navlinks = document.getElementById('nav-links');
+        if (navlinks.style.display === "flex") {
+            navlinks.style.display = "none";
+        } else {
+            navlinks.style.display = "flex";
+        }
+    }   
+});
+
+
 
   
