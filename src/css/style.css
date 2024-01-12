@@ -92,10 +92,10 @@ html.btn-dark img{
 .describe {
     margin-top: 20px;
     margin-inline: 250px;
+    margin-bottom: 60px;
 }
 
 .subtitulo{
-    margin-top: 30px;
     font-size: 21px;
     text-align: center;
 }
@@ -104,7 +104,7 @@ html.btn-dark img{
     display: flex;
     justify-content: center;
     list-style: none;
-    margin-bottom: 90px;
+    margin-bottom: 100px;
     gap: 180px;
 }
 
@@ -322,6 +322,8 @@ html.btn-dark img{
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(6, 1fr);
     }
+
+    
 
 }
 
