@@ -13,6 +13,7 @@ body{
     background-color: #34495E;
     color: white;
     font-family: 'Titillium Web', sans-serif;
+    min-height: 100%;
 }
 
 .photo-principal{
@@ -75,7 +76,7 @@ html.btn-dark img{
     filter: invert(100%);
 }
 
-.titulo {
+.titulo{
     display: flexbox;  
     text-align: center;
     justify-content: center;
@@ -86,13 +87,13 @@ html.btn-dark img{
 .content{
     display: inline-block;
     padding-top: 1px;
+    justify-content:space-between ;
     text-align: center;
+    width: auto;
 }
 
 .describe {
     margin-top: 20px;
-    margin-inline: 250px;
-    margin-bottom: 60px;
 }
 
 .subtitulo{
@@ -100,7 +101,7 @@ html.btn-dark img{
     text-align: center;
 }
 
-.containerSkills{
+.container-Skills{
     display: flex;
     justify-content: center;
     list-style: none;
@@ -108,7 +109,7 @@ html.btn-dark img{
     gap: 180px;
 }
 
-.cajita{
+.box{
     margin-top: 60px;
     text-align: center;
     display: grid;
@@ -120,7 +121,7 @@ html.btn-dark img{
     gap: 28px;
 }
 
-.cajita > div {
+.box > li{
     height: 280px;
     width: 280px;
     background-color: #000;
@@ -151,116 +152,85 @@ html.btn-dark img{
 
 .contenedorProyecto{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 50px;
 }
 
+.contenedorProyecto>h2{
+    text-align: center;
+}
+
 .contenedorProyecto .containerP{
     margin-top: 30px;
-    width: 100%;
-    align-items: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3 , 1fr);
+    margin-left: auto;
+    margin-right: auto;
     width: 90%;
     gap: 30px;
 } 
 
 .panel{
-    width: 350;
+    background-image:url('/Assets/img/campos_panama.jpg');
     height: 350px;
     border-radius: 20px;
     color: #fff;
     cursor:pointer;
-    margin: 10px;
-    transition: all 592ms ease-in;
-    scale: 1;
     box-shadow: 0px 1px 19px #000;
     overflow: hidden;
-}
-
-.panel:hover{
-    transform: scale(0.95);
-}
-
-.panel h1{
-    font-size: 35px;
-    position: absolute;
-    bottom: 100px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;
-}
-
-.panel.active:hover{
-    scale: 1.02;
-    box-shadow:0px 1px 30px #000;
-}
-
-
-.panel.active h1{
-    color: white;
-    box-shadow:0px 1px 20px #000;
-    opacity: 1;
-    transition: opacity 0.09s ease-in 0.2s;
-}
-.panel.active h6{
-    color: white;
-    box-shadow:0px 1px 20px #000;
-    opacity: 1;
-    transition: opacity 0.09s ease-in 0.2s;
-    overflow: hidden;
-}
-
-.panel h6{
-    font-size:15px;
-    position: absolute;
-    bottom: 70px;
-    left: 20px;                                                                                                                                                                                                                                                    
-    margin: 0;
-    opacity: 0;
-    overflow: hidden;
-}
-
-.logosTec{
-    height: 40px;
     display: flex;
-    bottom: 10px;
-    position: absolute;
-    margin-left: 20px;
-    opacity: 0;
+    flex-direction: column;
+    justify-content: end;
 }
 
-.panel.active .logosTec{
-    transition: opacity 0.2s ease-in 0.4s;
+.panel .oculto{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-left: 16px;
+    margin-bottom: 5px;
+}
+
+.panel:hover >img{
+    filter: blur(1px);
+}
+
+.panel:hover .oculto{
     opacity: 1;
 }
 
-.numProyectos{
-    display: flex;
-    background-color: black ;
-    justify-content: center;
-    height: 800px;
- 
+.panel .oculto--icons>img{
+    width: 30px;
+    height: 30px;
 }
 
-.numProyectosTwo{
-    border-radius: 80px;
-    margin-block: 100px;
+.statistics{
     display: flex;
-    justify-content: center;
-    width: 60%;
-    background-color: white;
-    text-align: center ;
+    flex-direction: column;
     align-items: center;
 }
 
-.cajitaNum{
-    margin: 40px;
-    background-color: black;
-    width: 200px;
-    height: 300px;
-    box-shadow:0px 1px 30px #000;
+.statistics-container{
+    display:flex;
+    width: 600px;
+    height: 200px;
+    background-color: #000;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.statistic-item{
+    color: #000;
+    text-align: center;
+    background-color: white;
+}
+
+.statistic-item>img{
+    margin: auto;
+    width: 50px;
+    height: 50px;
 }
 
 .footer{
@@ -268,13 +238,15 @@ html.btn-dark img{
     text-align: center;
     justify-content: center;
 }
+
+
 .footer a{
     list-style: none;
     text-decoration: none;
     color: white;   
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 980px) {
 
     .logo{
         margin-left: -15px;
@@ -310,15 +282,21 @@ html.btn-dark img{
         margin: 20px ;
     }
 
-    .containerSkills{
+    .container-Skills{
         display: flex;
         flex-direction: column;
-        gap: 90px;
         margin-bottom: 160px;
+    }
+
+    .box{
+        width: auto;
+        height: auto;
     }
 
     .contenedorProyecto .containerP{
         display: grid;
+        justify-content: center;
+        
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(6, 1fr);
     }
