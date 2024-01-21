@@ -163,23 +163,31 @@ html.btn-dark .panel .oculto--icons img{
     text-align: center;
 }
 
+.Skills{
+    display: grid;
+    place-content: center;
+    width: 100%;
+}
 .container-Skills{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     list-style: none;
     margin-bottom: 100px;
     gap: 180px;
 }
 
 .box{
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2,
+    minmax(50px, 2fr)
+    );
+    grid-template-rows: repeat(6, 2fr);
+    justify-items: center;
     margin-top: 60px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(2,
-        minmax(150px, 1fr)
-        );
-    grid-template-rows: repeat(6, 1fr);
-    justify-items: center;
+
     gap: 28px;
 }
 
@@ -273,16 +281,15 @@ html.btn-dark .panel .oculto--icons img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
 }
 
 .statistics-container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    place-items: center;
     width: 1000px;
     height: 300px;
-    gap: 80px;
+    gap: -100px;
     background-color: #000;
     border-radius: 20px;
 
@@ -346,6 +353,10 @@ html.btn-dark .panel .oculto--icons img{
         text-align: center;
     }
 
+    .switch{
+        margin-left: 50px;
+    }
+
     .content{
         width: 100%;
     }
@@ -361,14 +372,15 @@ html.btn-dark .panel .oculto--icons img{
     }
 
     .box{
-        width: auto;
+        width: 100%;
         height: auto;
-        margin-inline: 28px;
+        margin-inline: 0;
     }
 
     .box li{
-        width: 200px;
-        height: 200px;
+        justify-content: center;
+        width: 160px;
+        height: 160px;
     }
 
     .contenedorProyecto .containerP{
@@ -380,17 +392,20 @@ html.btn-dark .panel .oculto--icons img{
     }
 
     .statistics{
-        display: flex;
-        flex-direction: column;
-        width: auto;
+        width: 90%;
         height: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .statistics-container{
         display: flex;
         flex-direction: column;
-        width: 410px;
+        justify-content: center;
+        width: 90%;
         height: 850px;
+        gap: 80px;
+
     }
 }
 
