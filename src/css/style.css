@@ -16,22 +16,26 @@ body{
     min-height: 100%;
 }
 
-.photo-principal{
-    height: 250px;
-    width: auto;
-    border-radius: 30px;
-}
-
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
     color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 85vw;
+    height: 2.5em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
 }
 
 
 .header .logo {
+    margin-top: 1em;
     cursor: pointer;
     height: 70px;
     width: auto;
@@ -43,11 +47,11 @@ body{
 }
 
 .nav-links{
-    
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
+    
 }
 
 .header .nav-links li{
@@ -138,62 +142,100 @@ html.btn-dark .panel .oculto--icons img{
 }
 
 
-.titulo{
-    display: flexbox;  
-    text-align: center;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 10px;
+.subtitulo--two{
+    margin-top: 1.5em;
+    margin-bottom: 0.9em;
 }
 
 .content{
-    display: inline-block;
-    padding-top: 1px;
-    justify-content:space-between ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 0.36fr);
+    grid-template-areas: 
+        "a a a"
+        "b b b"
+        "c d d"
+        ;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 6em;
+}
+
+
+.titulo-port{
     text-align: center;
+    margin-top: 4em;
+    grid-area: a;
+}
+
+.subtitulo-jose{
+    grid-area: b;
+    font-size: 21px;
+    text-align: start;
+    margin-left: 19em;
+    margin-bottom: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.photo-principal{
+    display: flex;
+    flex-direction: column;
+    grid-area: c;
+    height: 48vh;
     width: auto;
+    border-radius: 50%;
+    margin-left: 18em;
 }
 
 .describe {
-    margin-top: 20px;
+    grid-area: d;
+    display: grid;
+    place-content: center;
+    margin-left: 10em;
+    margin-right: 10em;
 }
 
-.subtitulo{
-    font-size: 21px;
+.subtitulo--front,.subtitulo--back{
     text-align: center;
+}
+
+.subtitulo--Skills, .subtitulo--proyectos{
+    text-align: center;
+    margin-bottom: 2em;
 }
 
 .Skills{
     display: grid;
     place-content: center;
     width: 100%;
+    height: auto;
 }
+
 .container-Skills{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     list-style: none;
-    margin-bottom: 100px;
-    gap: 180px;
+    margin-bottom: 10em;
+    gap: 10em;
 }
 
 .box{
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
     grid-template-columns: repeat(2,
-    minmax(50px, 2fr)
+    minmax(50px, 1fr)
     );
-    grid-template-rows: repeat(6, 2fr);
+    grid-template-rows: repeat(6, 1fr);
     justify-items: center;
     margin-top: 60px;
     text-align: center;
-    display: grid;
-
-    gap: 28px;
+    gap: 1.5em;
 }
 
 .box > li{
-    height: 280px;
-    width: 280px;
+    height: 15em;
+    width: 15em;
     background-color: #000;
     opacity: 0.5;
     box-shadow: 0px 1px 19px #000;
@@ -227,15 +269,11 @@ html.btn-dark .panel .oculto--icons img{
     margin-bottom: 50px;
 }
 
-.contenedorProyecto>h2{
-    text-align: center;
-}
-
 .contenedorProyecto .containerP{
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4 , 1fr);
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -244,26 +282,31 @@ html.btn-dark .panel .oculto--icons img{
 
 .panel{
     background-image:url('/Assets/img/campos_panama.jpg');
-    height: 350px;
-    border-radius: 20px;
-    color: #fff;
-    cursor:pointer;
-    box-shadow: 0px 1px 19px #000;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    color: #fff;
+    height: 24em;
+    border-radius: 20px;
+    cursor:pointer;
+    box-shadow: 0px 1px 19px #000;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .panel .oculto{
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.28s ease-in-out;
     margin-left: 16px;
     margin-bottom: 5px;
+    position: relative;
 }
 
-.panel:hover >img{
-    filter: blur(1px);
+.panel>img{
+    position: absolute;
+    inset: 0;
 }
 
 .panel:hover .oculto{
@@ -289,7 +332,6 @@ html.btn-dark .panel .oculto--icons img{
     place-items: center;
     width: 1000px;
     height: 300px;
-    gap: -100px;
     background-color: #000;
     border-radius: 20px;
 
@@ -339,9 +381,8 @@ html.btn-dark .panel .oculto--icons img{
 
     .nav-links{
         display: none;
-        
         flex-direction: column;
-        margin-left: -100px;
+        margin-left: 4em;
     }
 
     .nav-links li{
@@ -354,15 +395,40 @@ html.btn-dark .panel .oculto--icons img{
     }
 
     .switch{
-        margin-left: 50px;
+        margin-left: 23px;
     }
 
     .content{
-        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 
+            "a"
+            "a"
+            "b"
+            "b"
+            "c"
+            "d";
+        height: 120vh;
+    }
+
+    .subtitulo-jose{
+        margin-left: 1em;
+        margin-right: 1em;
+        text-align: center;
+        justify-content: start;
+    }
+    
+    .photo-principal{
+        place-content: center;
+        width: 90%;
+        margin-left: 1em;
+        margin-right: 1em;
     }
 
     .describe{
-        margin: 20px ;
+        text-align: center;
+        margin-left: 4em;
+        margin-right: 4em;
     }
 
     .container-Skills{
