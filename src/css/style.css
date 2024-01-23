@@ -294,6 +294,7 @@ html.btn-dark .panel .oculto--icons img{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 99999;
 }
 
 .panel .oculto{
