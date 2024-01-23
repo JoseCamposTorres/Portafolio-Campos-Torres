@@ -281,7 +281,7 @@ html.btn-dark .panel .oculto--icons img{
 } 
 
 .panel{
-    background-image:url('/Assets/img/campos_panama.jpg');
+    background-image:url('/./Assets/img/campos_panama.jpg');
     display: flex;
     flex-direction: column;
     justify-content: end;
