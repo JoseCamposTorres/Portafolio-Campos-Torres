@@ -13,7 +13,7 @@ function removeActiveClasses(){
     })
 }
 
-document.getElementById('burger').addEventListener('click', function() {
+document.getElementById('mobile-menu').addEventListener('click', function() {
     var MediaQuery = window.matchMedia('(max-width:600px)');
     if(MediaQuery.matches){
         var navlinks = document.getElementById('nav-links');

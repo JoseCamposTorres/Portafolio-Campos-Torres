@@ -11,40 +11,33 @@
 <body>  
 
     <header class="header">
-        <div class="logo">
-            <a href="#content">J</a>
+        <div id="logo" class="logo">
+            <h1>J</h1>
         </div>
+        
         <nav>
-            <ul class="navlinks">
-                <li><a href="#content">Sobre mi</a></li>
-                <li><a href="#Skills">Skills</a></li>
-                <li><a href="#contenedorProyecto">Proyectos</a></li>
+            <ul id="nav-links" class="nav-links">
+                <li class="butom"><a href="#content">Sobre mi</a></li>
+                <li class="butom"><a href="#Skills">Skills</a></li>
+                <li class="butom"><a href="#contenedorProyecto">Proyectos</a></li>
+                <li class="butom"><a href="#">Contacto</a></li>
+                <li class="butom"><a href="">Servicios</a></li>
+                <label class="switch">
+                    <input type="checkbox" id="btn-dark"
+                    onclick="document.documentElement.classList.toggle('btn-dark')" 
+                    >
+                    <span class="slider"></span>
+                </label>
             </ul>
         </nav>
-        <a href="#" class="btn"><button>Contact</button></a>
-
-        <a onclick="openNav()" href="#" class="menu"><button>Menú</button></a>
-
-        <div class="overlay" id="mobile-menu">
-            <a onclick="closeNav()" href="" class="close">&times;</a>
-            <div class="overlay-content">
-                    <li><a href="#content">Sobre mi</a></li>
-                    <li><a href="#Skills">Skills</a></li>
-                    <li><a href="#contenedorProyecto">Proyectos</a></li>
-                    <li><a href="#Contacto">Contacto</a></li>
-            </div>
-        </div>
-
     </header>
-
-    <script type="text/javascript" src="src/js/nav.js" ></script>
 
     <div id="content" class="content">
 
             <h1 class="titulo titulo-port">PORTAFOLIO</h1>
             
             <div class="photo">
-                <img class="photo-principal" title="Foto de Campos" src="Assets/img/campos_panama.jpg" alt="Foto de Jose Luis Campos Torres en Panamá">
+                <img class="photo-principal" title="Foto de Campos" src="Assets/img/backroundcard.jpg" alt="Foto de Jose Luis Campos Torres en Panamá">
             </div>
 
             <div class="description">

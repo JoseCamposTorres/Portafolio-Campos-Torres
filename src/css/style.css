@@ -19,140 +19,31 @@ body{
 
 .header{
     display: flex;
-    justify-content: end;
+    justify-content: space-around;
     align-items: center;
-    height: 65px;
-    padding:5px 10%;
+    gap: 20em;
+  }
+  
+  .nav-links{
+    display: flex;
+    align-items: center;
+    margin-left: 600px;
+    padding: 1em
+  }
 
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-
-    box-shadow: 0px 1px 19px #000;
-    backdrop-filter: blur(8px);
-
+  .nav-links li{
+    list-style: none;
+    padding: 1em;
     a{
         text-decoration: none;
         color: white;
+        font-size: 1.1em;
     }
-}
-
-.header .navlinks{
-    list-style: none;
- }
-
- .menu{
-    display: none;
- }
- 
- .header .navlinks a{
-     font-size:700;
-     color: white;
- }
- 
- .header .navlinks li{
-     display: inline-block;
-     padding: 0 20px;
- }
- 
- .header .navlinks li:hover{
-     transform: scale(1.1);
-     a{
-         color: yellow;
-     }
- }
-
- @media screen and (max-width: 768px){
-    .navlinks, .btn{
-         display: none;
-    }
-
-    .menu{
-        display: inherit;
-    }
- }
-
- /* Nav */
-
-.header a{
-    text-decoration: none;
-}
-
-.header .logo{
-    font-family: 'Oswald', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-right: auto;
-}
-
-.header .btn button,
-.header .menu button{
-    font-weight: 700;
-    color: #1b3039;
-    padding: 9px 25px;
-    background: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all .3s ease 0s;
-    margin-left: 20px;
-
-     :hover{
-        transform: scale(1.1);
-    }
-}
-
-.header .btn button:hover,
-.header .menu button:hover{
-        transform: scale(1.1);
-}
-
-.header .overlay{
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(33, 49, 63, .95);
-    overflow: hidden;
-    transition: all .3s ease 0s;
-    list-style: none;
-}
-
-.header .overlay .overlay-content{
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header .overlay a{
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: all .3s ease 0s;
-    font-weight: 700;
-    color: white;
-}
-
-.header .overlay :hover,
-.header .overlay :focus{
-    color: yellow;
-}
-
-.header .overlay .close{
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 65px;
-}
+  }
+  
 
 .switch{
+    
     font-size: 17px;
     position: relative;
     display: inline-block;
@@ -163,6 +54,7 @@ body{
 }
 
 .switch input{
+    
     opacity: 0;
     width: 0;
     height: 0;
@@ -224,7 +116,7 @@ html.btn-dark .panel .oculto--icons img{
 .content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows:repeat(4, 0.25fr);
+    grid-template-rows:repeat(4, 0.35fr);
     grid-template-areas: 
     "a a "
     "b c "
@@ -243,17 +135,20 @@ html.btn-dark .panel .oculto--icons img{
 
 .photo{
     width: 50%;
+    height: 100%;
     grid-area:b ;
 }
 
 .photo-principal{
     width: 100%;
-    margin-left: 50%;
+    height: 100%;
+    margin-left: 40%;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .description{
+
     padding: 5%;
     text-align: start;
     grid-area: c;
@@ -353,7 +248,7 @@ html.btn-dark .panel .oculto--icons img{
 } 
 
 .panel{
-    background-image:url('../../Assets/img/campos_panama.jpg');
+    /*background-image:url('../../Assets/img/campos_panama.jpg');*/
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -437,20 +332,14 @@ html.btn-dark .panel .oculto--icons img{
 }
 
 
-@media screen and (max-height: 450px) {
-    .header .overlay a{
-        font-size: 20px;
-    }
-
-    .header .overlay .close{
-        font-size: 20px;
-        top: 15px;
-        right: 35px;
-        
-    }
-}
-
 @media screen and (max-width: 980px) {
+
+    .header{
+        display: flex;
+        margin-left: 0;
+        justify-content: space-between;
+    }
+
     .switch{
         margin-left: 23px;
     }
@@ -478,6 +367,7 @@ html.btn-dark .panel .oculto--icons img{
     .photo{
         margin-top: 2em;
         width: 80%;
+        height: 100%;
         grid-area:b ;
     }
 
